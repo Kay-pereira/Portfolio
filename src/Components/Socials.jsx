@@ -1,7 +1,9 @@
+
+
 import React from "react";
 import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 
-export default function Footer() {
+export default function Socials() {
   const socials = [
     {
       name: "GitHub",
@@ -28,10 +30,6 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/* Copyright */}
-        <p className="footer-text">
-          © {new Date().getFullYear()} Edmund Kwesi Pereira. All rights reserved.
-        </p>
 
         {/* Social Links */}
         <div className="footer-socials">

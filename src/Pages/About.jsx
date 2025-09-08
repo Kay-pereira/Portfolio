@@ -42,7 +42,7 @@ export default function AboutSection() {
             <p className="text">
               With a strong foundation in <span className="bold">React</span>{" "}
               and <span className="bold">Django</span>, I enjoy crafting
-              full-stack applications that help businesses and individuals
+              full-stack applications that help businesses 
               succeed online.
             </p>
           </motion.div>

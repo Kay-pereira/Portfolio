@@ -19,21 +19,21 @@ export default function ProjectCard({ project, index }) {
       )}
 
       {/* Project Info */}
-      <div className="project-card-body">
-        <h3 className="project-card-title">{project.title}</h3>
-        <p className="project-card-description">{project.description}</p>
 
-        {/* View Button */}
-        {project.link && (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="project-card-btn"
-          >
-            View Project
-          </a>
-        )}
+
+        <div className="project-card-body">
+            <h3 className="text-xl font-semibold mb-2">{project.project_name}</h3>
+    <p className="text-gray-600 mb-4">{project.project_description}</p>
+
+    {project.project_image && (
+    <img
+        src={project.project_image}
+        alt={project.project_name}
+        className="w-full h-48 object-cover"
+    />
+    )}
+
+
       </div>
     </motion.div>
   );

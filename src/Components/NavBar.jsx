@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
+import Footer from "./Footer";
+import Socials from "./Socials";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,6 +22,10 @@ export default function Navbar() {
         <a href="#home" className="navbar-logo">
           Paakwesi Pereira
         </a>
+        
+        <div>
+        <Socials />
+        </div>
 
         {/* Desktop Menu */}
         <ul className="navbar-menu">

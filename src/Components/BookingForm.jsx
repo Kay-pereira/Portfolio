@@ -20,10 +20,10 @@ export default function BookingForm() {
   const validate = () => {
     let newErrors = {};
     if (!formData.name.trim()) newErrors.name = "Name is required";
-    if (!formData.email) {
-      newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Enter a valid email";
+    if (!formData.Phone_number) {
+      newErrors.Phone_number = "Phone number is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.Phone_number)) {
+      newErrors.email = "Enter a valid Phone number";
     }
     if (!formData.message.trim()) newErrors.message = "Message is required";
     return newErrors;
@@ -53,7 +53,7 @@ export default function BookingForm() {
 
       await response.json();
       setSuccess("Your booking has been submitted successfully!");
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", Phone_number: "", message: "" });
     } catch (error) {
       setErrors({ api: error.message });
     } finally {
@@ -65,7 +65,7 @@ export default function BookingForm() {
     <section id="contact" className="booking-section">
       <div className="booking-container">
         <h2 className="section-heading">
-          Book a <span className="highlight">Session</span>
+          Book a <span className="highlight">Meeting</span>
         </h2>
 
         <form onSubmit={handleSubmit} className="booking-form">
@@ -85,14 +85,14 @@ export default function BookingForm() {
 
           {/* Email */}
           <div>
-            <label className="form-label">Email</label>
+            <label className="form-label">Phone Number</label>
             <input
-              type="email"
-              name="email"
-              value={formData.email}
+              type="number"
+              name="Phone_number"
+              value={formData.Phone_number}
               onChange={handleChange}
               className="form-input"
-              placeholder="you@example.com"
+              placeholder="+233 xxx xxx xxxx"
             />
             {errors.email && <p className="error-text">{errors.email}</p>}
           </div>
@@ -106,7 +106,7 @@ export default function BookingForm() {
               onChange={handleChange}
               rows="4"
               className="form-input"
-              placeholder="Tell me what you need..."
+              placeholder="A short note"
             />
             {errors.message && <p className="error-text">{errors.message}</p>}
           </div>
