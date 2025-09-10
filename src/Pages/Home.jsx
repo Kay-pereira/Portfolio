@@ -15,7 +15,7 @@ export default function HeroSection() {
         transition={{ duration: 0.8 }}
         className="hero-heading"
       >
-        Hi, I'm <span className="hero-heading">Paakwesi Pereira</span>
+        <div className="hi">Hi</div> I'm <span className="hero-heading">Paakwesi Pereira</span>
       </motion.h1>
 
       <motion.p

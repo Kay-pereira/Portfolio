@@ -1,7 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
+import weblinks from "./Weblinks";
+import { useState } from "react";
 
 export default function ProjectCard({ project, index }) {
+    const [showWeblinks, setshowWeblinks] = useState(false)
+
+    const handleClick = () => {
+        setshowWeblinks(true)
+    }
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -34,11 +41,10 @@ export default function ProjectCard({ project, index }) {
     )}
 
     <div className="view-live-section">
-    <a href="">
-    <div className="">
-    <button className="view-work-btn">View this Project<span class="material-symbols-outlined">open_in_new</span></button>
+    <div className= "live-btn">
+    <button className="view-work-btn" onClick={handleClick}>View this Project<span class="material-symbols-outlined">open_in_new</span></button>
+    {showWeblinks && < weblinks />}
     </div>
-    </a>
     </div>
 
       </div>

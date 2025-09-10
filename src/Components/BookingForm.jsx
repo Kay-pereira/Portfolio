@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export default function BookingForm() {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    Phone_number: "",
     message: "",
   });
 
@@ -20,11 +20,13 @@ export default function BookingForm() {
   const validate = () => {
     let newErrors = {};
     if (!formData.name.trim()) newErrors.name = "Name is required";
-    if (!formData.Phone_number) {
+
+    if (!formData.Phone_number.trim()) {
       newErrors.Phone_number = "Phone number is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.Phone_number)) {
-      newErrors.email = "Enter a valid Phone number";
+    } else if (!/^\+?[0-9]{10,15}$/.test(formData.Phone_number)) {
+      newErrors.Phone_number = "Enter a valid phone number (10–15 digits)";
     }
+
     if (!formData.message.trim()) newErrors.message = "Message is required";
     return newErrors;
   };
@@ -83,18 +85,20 @@ export default function BookingForm() {
             {errors.name && <p className="error-text">{errors.name}</p>}
           </div>
 
-          {/* Email */}
+          {/* Phone Number */}
           <div>
             <label className="form-label">Phone Number</label>
             <input
-              type="number"
+              type="tel"
               name="Phone_number"
               value={formData.Phone_number}
               onChange={handleChange}
               className="form-input"
               placeholder="+233 xxx xxx xxxx"
             />
-            {errors.email && <p className="error-text">{errors.email}</p>}
+            {errors.Phone_number && (
+              <p className="error-text">{errors.Phone_number}</p>
+            )}
           </div>
 
           {/* Message */}
@@ -118,11 +122,7 @@ export default function BookingForm() {
           {success && <p className="success-text center">{success}</p>}
 
           {/* Submit Button */}
-          <button
-            type="submit"
-            disabled={loading}
-            className="submit-btn"
-          >
+          <button type="submit" disabled={loading} className="submit-btn">
             {loading ? "Submitting..." : "Submit Booking"}
           </button>
         </form>

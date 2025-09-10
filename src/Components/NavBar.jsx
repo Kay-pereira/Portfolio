@@ -22,10 +22,6 @@ export default function Navbar() {
         <a href="#home" className="navbar-logo">
           Paakwesi Pereira
         </a>
-        
-        <div>
-        <Socials />
-        </div>
 
         {/* Desktop Menu */}
         <ul className="navbar-menu">
