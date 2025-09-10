@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { motion } from 'framer-motion'
+import ScrollLinked from './Components/ScrollView'
 import HeroSection from './Pages/Home'
 import ProjectsSection from './Pages/Projects'
 import AboutSection from './Pages/About'

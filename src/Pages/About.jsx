@@ -27,7 +27,9 @@ export default function AboutSection() {
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
           >
             <h3 className="sub-heading">Who I Am</h3>
             <p className="text">

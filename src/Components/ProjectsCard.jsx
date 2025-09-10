@@ -29,10 +29,17 @@ export default function ProjectCard({ project, index }) {
     <img
         src={project.project_image}
         alt={project.project_name}
-        className="w-full h-48 object-cover"
+        className="project-card-image"
     />
     )}
 
+    <div className="view-live-section">
+    <a href="">
+    <div className="">
+    <button className="view-work-btn">View this Project<span class="material-symbols-outlined">open_in_new</span></button>
+    </div>
+    </a>
+    </div>
 
       </div>
     </motion.div>
