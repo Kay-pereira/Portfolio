@@ -45,7 +45,7 @@ export default function BookingForm() {
     setSuccess(null);
 
     try {
-      const response = await fetch("http://localhost:8000/api/bookings/", {
+      const response = await fetch("https://67e5687ca4cb.ngrok-free.app/api/bookings/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

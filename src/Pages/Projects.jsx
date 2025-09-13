@@ -6,7 +6,7 @@ export default function ProjectsSection() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/projects/")
+    fetch(" https://67e5687ca4cb.ngrok-free.app/api/projects/")
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch((err) => console.error("Error fetching projects:", err));
