@@ -4,7 +4,7 @@ export default function HeaderImage() {
   return (
     <section className="header-banner">
       <motion.img
-        src="\public\EDMUND_K_PEREIRA.svg"
+        src="/EDMUND_K_PEREIRA.svg"
         alt="Header Banner"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1, }}
