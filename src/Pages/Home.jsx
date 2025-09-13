@@ -11,7 +11,7 @@ export default function HeroSection() {
       <motion.h1
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: false, amount: 0.5 }}
         transition={{ duration: 0.8 }}
         className="hero-heading"
       >
@@ -21,7 +21,7 @@ export default function HeroSection() {
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: false, amount: 0.5 }}
         transition={{ delay: 0.3, duration: 0.8 }}
         className="hero-subtitle"
       >

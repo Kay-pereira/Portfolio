@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProjectCard from "../Components/ProjectsCard";
+import { motion } from "framer-motion";
 
 export default function ProjectsSection() {
   const [projects, setProjects] = useState([]);
@@ -12,11 +13,13 @@ export default function ProjectsSection() {
   }, []);
 
   return (
+    
     <section id="projects" className="projects-section">
       <div className="container">
         <h2 className="section-heading">
           My <span className="highlight">Projects</span>
         </h2>
+        <p>A short List of Projects I'm actively Developing</p>
 
         {/* Grid of project cards */}
         <div className="projects-grid">

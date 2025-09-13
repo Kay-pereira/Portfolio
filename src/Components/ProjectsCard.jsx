@@ -12,8 +12,10 @@ export default function ProjectCard({ project, index }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.5 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.2 }}
+      
       className="project-card"
     >
       {/* Project Image */}
@@ -42,7 +44,7 @@ export default function ProjectCard({ project, index }) {
 
     <div className="view-live-section">
     <div className= "live-btn">
-    <button className="view-work-btn" onClick={handleClick}>View this Project<span class="material-symbols-outlined">open_in_new</span></button>
+    <button className="view-work-btn" onClick={handleClick}>View this Project<span className="material-symbols-outlined">open_in_new</span></button>
     {showWeblinks && < weblinks />}
     </div>
     </div>
