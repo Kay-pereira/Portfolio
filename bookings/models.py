@@ -4,9 +4,8 @@ from django.db import models
 
 
 class Bookings (models.Model):
-    firstname = models.TextField(max_length=100)
-    email = models.EmailField()
-    Phone_number = models.CharField(max_length=10)
+    name = models.TextField(max_length=100)
+    Phone_number = models.CharField(max_length=15)  # Increased max_length for international numbers
     prefered_date = models.DateField(auto_now_add=True)
     date_submitted = models.DateTimeField(auto_now_add=True)
     message = models.TextField()

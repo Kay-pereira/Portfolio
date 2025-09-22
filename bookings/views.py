@@ -13,7 +13,7 @@ from .Serializers import BookingsSerializers
 
 def BookView (request):
     if request.method == 'GET':
-        bookings = Bookings.objects.all().order_by('-date booked')
+        bookings = Bookings.objects.all().order_by('-date_submitted')
         serializers = BookingsSerializers(bookings, many=True)
         return Response (serializers.data)
     
@@ -21,8 +21,8 @@ def BookView (request):
         serializers = BookingsSerializers(data=request.data)
         if serializers.is_valid():
             serializers.save()
-        return Response (serializers.data, status=status.HTTP_201_CREATED)
-    return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response (serializers.data, status=status.HTTP_201_CREATED)
+        return Response (serializers.errors, status=status.HTTP_400_BAD_REQUEST)
     
 
 @api_view (['GET', 'DELETE', 'PUT'])
@@ -39,10 +39,9 @@ def booking_detail (request, pk):
         serializer = BookingsSerializers(booking, data= request.data)
         if serializer.is_valid():
             serializer.save()
-        return Response (serializer.data)
+            return Response (serializer.data)
+        return Response (serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'DELETE':
         booking.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-    return Response (serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    
