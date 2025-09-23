@@ -1,2 +1,2 @@
 
-web: gunicorn potfolio-webapp.wsgi --log-file -
+web: gunicorn poRtfolio-webapp.wsgi --log-file -
