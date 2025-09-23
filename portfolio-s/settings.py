@@ -146,6 +146,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  
     "http://127.0.0.1:5173",
     'https://portfolio-gray-beta-40.vercel.app'
+     'https://a8e82c977e6e.ngrok-free.app',
+    
 ]
 
 import os
