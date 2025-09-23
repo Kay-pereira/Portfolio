@@ -13,12 +13,14 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 from decouple import config
 import dj_database_url
+import os
 
 USER = config('user')
 PASSWORD = config('password')
 HOST = config('host')
 PORT = config('port')
 DBNAME = config('dbname')
+DATABASE_URL = config('DATABASE_URL')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -91,7 +93,7 @@ WSGI_APPLICATION = 'portfolio-s.wsgi.application'
 
 DATABASES = {
     "default": dj_database_url.config(
-        default=os.environ.get("DATABASE_URL")  # Railway will pass this in
+        default=config('DATABASE_URL')  # Railway will pass this in
     )
 }
 
