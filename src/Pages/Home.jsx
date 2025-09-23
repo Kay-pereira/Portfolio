@@ -1,10 +1,29 @@
-import React from "react";
-import { motion } from "framer-motion";
-
-
-
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function HeroSection() {
+  const greetings = [
+    "Hi",
+    "Hola",
+    "Bonjour",
+    "Ciao",
+    "Hallo",
+    "Olá",
+    "Namaste",
+    "Salaam",
+    "Konnichiwa",
+    "Zdravstvuyte",
+  ];
+
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % greetings.length);
+    }, 1000); // change every second
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="hero-section">
       {/* Animated intro text */}
@@ -15,7 +34,19 @@ export default function HeroSection() {
         transition={{ duration: 0.8 }}
         className="hero-heading"
       >
-        <div className="hi">Hi</div> I'm <span className="hero-heading">Paakwesi Pereira</span>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={greetings[index]} 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 1. }}
+            className="hi inline-block mr-2"
+          >
+            {greetings[index]}
+          </motion.div>
+        </AnimatePresence>
+        I'm <span className="hero-heading">Edmund Paakwesi Pereira</span>
       </motion.h1>
 
       <motion.p
@@ -27,8 +58,8 @@ export default function HeroSection() {
       >
         A passionate web developer specializing in{" "}
         <span className="highlight">React</span> &{" "}
-        <span className="highlight">Django</span>. I love
-        building interactive and secure web experiences for businesses.
+        <span className="highlight">Django</span>. I love building interactive
+        and secure web experiences for businesses.
       </motion.p>
 
       {/* CTA Buttons */}

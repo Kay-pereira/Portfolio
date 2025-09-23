@@ -6,7 +6,7 @@ export default function ProjectsSection() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("https://67e5687ca4cb.ngrok-free.app/api/projects/")
+    fetch("https://portfolio-production-b4af.up.railway.app/api/projects/")
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch((err) => console.error("Error fetching projects:", err));
