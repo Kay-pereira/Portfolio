@@ -16,7 +16,7 @@ import dj_database_url
 import os
 
 USER = config('user')
-PASSWORD = config('password')
+password = config('password')
 HOST = config('host')
 PORT = config('port')
 DBNAME = config('dbname')
